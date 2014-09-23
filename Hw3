@@ -1,0 +1,10 @@
+#!/bin/bash 
+
+declare -i temp1=$(i2cget -y 1 0x48)
+declare -i temp2=$(i2cget -y 1 0x4A)
+
+temp1=$((temp1*9/5+32))
+temp2=$((temp2*9/5+32))
+
+echo "T1 sensor is $temp1 'C "
+echo "T1 sensor is $temp2 'C "
